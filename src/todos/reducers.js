@@ -20,8 +20,8 @@ export const todos = (state = [], action) => {
 
     case TODO_IS_COMPLECTED: {
       const { todo } = payload
-      const todoFilter = state.filter(todoItem => todoItem._id !== todo._id);
-      return [...todoFilter, { ...todo, isCompleted: true }];
+      const todoFilter = state.filter(todoItem => todoItem._id !== todo._id)
+      return [...todoFilter, { ...todo, isCompleted: true }]
     }
 
     default: {

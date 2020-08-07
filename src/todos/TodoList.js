@@ -4,10 +4,16 @@ import { connect } from 'react-redux'
 import NewTodoForm from './NewTodoForm'
 import TodoListItem from './TodoListItem'
 import { removeTodo, markCompleted } from './actions'
-import './TodoList.css'
+
+import styled from 'styled-components'
+
+const ListTodoWrapper = styled.div`
+  max-width: 700px;
+  margin: auto;
+`
 
 const TodoList = ({ todos = [], onRemovePressed, onMarkComplected }) => (
-  <div className="list-wrapper">
+  <ListTodoWrapper>
     <h1>TODO Application</h1>
     <NewTodoForm />
     {todos.map((todo, index) => (
@@ -18,7 +24,7 @@ const TodoList = ({ todos = [], onRemovePressed, onMarkComplected }) => (
         onMarkComplected={onMarkComplected}
       />
     ))}
-  </div>
+  </ListTodoWrapper>
 )
 
 const mapStateToProps = (state) => ({
